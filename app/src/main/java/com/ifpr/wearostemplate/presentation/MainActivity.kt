@@ -34,11 +34,26 @@ class MainActivity : ComponentActivity() {
             startActivity(intent)
         }
 
+        val btnPlay = findViewById<Button>(R.id.btnPlay)
         val btnStop = findViewById<Button>(R.id.btnStop)
+
+        btnStop.isEnabled = false
+
+        btnPlay.setOnClickListener {
+            btnPlay.isEnabled = false
+            btnStop.isEnabled = true
+
+            Toast.makeText(this, "Corrida iniciada!", Toast.LENGTH_SHORT).show()
+        }
+
         btnStop.setOnClickListener {
+            btnPlay.isEnabled = true
+            btnStop.isEnabled = false
+
             val distanciaKm = 2.5
             val tempoSegundos = 900L
             salvarCorrida(distanciaKm, tempoSegundos)
+
             Toast.makeText(this, "Corrida salva!", Toast.LENGTH_SHORT).show()
         }
     }
