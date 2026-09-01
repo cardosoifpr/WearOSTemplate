@@ -1,100 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="#000000">
-
+    android:fillViewport="true">
 
     <LinearLayout
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="18dp">
-
+        android:gravity="center_horizontal"
+        android:padding="16dp">
 
         <TextView
-
             android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CorraMais"
-            android:textSize="22sp"
+            android:text="Minha Corrida"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#F8F8F8"
-            android:layout_marginBottom="6dp"/>
-
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"/>
 
         <TextView
-
+            android:id="@+id/txtTempo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cada passo conta!"
-            android:textSize="10sp"
-            android:textColor="#FF80AB"
-            android:layout_marginBottom="22dp"/>
+            android:text="00:00"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tempo"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp"/>
 
-        <!-- Botões de corrida -->
+        <TextView
+            android:id="@+id/txtDistancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00 km"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distância"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/txtRitmo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-- min/km"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ritmo médio"
+            android:textSize="12sp"
+            android:layout_marginBottom="16dp"/>
 
         <LinearLayout
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
 
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Iniciar"/>
 
             <Button
-
-                android:id="@+id/btnPlay"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:text="▶"
-                android:textSize="24sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textColor="#4A2436"
-                android:backgroundTint="#F7C6DA"
-                android:layout_marginEnd="12dp"/>
-
-
-            <Button
-
                 android:id="@+id/btnStop"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:text="■"
-                android:textSize="24sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#D86B93"/>
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parar"
+                android:layout_marginStart="8dp"/>
 
         </LinearLayout>
 
-
-        <!-- Perfil -->
-
         <Button
-
             android:id="@+id/btnPerfil"
-            android:layout_width="120dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Perfil"
-            android:textAllCaps="false"
-            android:textStyle="bold"
-            android:textColor="#6B3048"
-            android:backgroundTint="#FCEAF1"/>
-
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
-
 
 </ScrollView>
