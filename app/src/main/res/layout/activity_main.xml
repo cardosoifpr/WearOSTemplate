@@ -4,98 +4,201 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@drawable/bg_main">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:padding="16dp">
+        android:padding="14dp">
 
+        <!-- Título -->
         <TextView
-            android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Minha Corrida"
-            android:textSize="20sp"
+            android:text="🏃 CorraMais"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"/>
-
-        <TextView
-            android:id="@+id/txtTempo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00:00"
-            android:textSize="28sp"
-            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"
             android:layout_marginBottom="4dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tempo"
-            android:textSize="12sp"
+            android:text="Vamos correr?"
+            android:textSize="11sp"
+            android:textColor="#D8D4E8"
             android:layout_marginBottom="12dp"/>
 
-        <TextView
-            android:id="@+id/txtDistancia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0.00 km"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Distância"
-            android:textSize="12sp"
-            android:layout_marginBottom="12dp"/>
-
-        <TextView
-            android:id="@+id/txtRitmo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-- min/km"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ritmo médio"
-            android:textSize="12sp"
-            android:layout_marginBottom="16dp"/>
-
+        <!-- TEMPO -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="12dp"
+            android:background="@drawable/card_info">
 
-            <Button
-                android:id="@+id/btnStart"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Iniciar"/>
+                android:text="TEMPO"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#BDB7D9"/>
 
-            <Button
-                android:id="@+id/btnStop"
+            <TextView
+                android:id="@+id/txtTempo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Parar"
-                android:layout_marginStart="8dp"/>
+                android:text="00:00"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="2dp"/>
 
         </LinearLayout>
 
+
+        <!-- DISTÂNCIA + RITMO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <!-- DISTÂNCIA -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/card_info">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DISTÂNCIA"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:textColor="#BDB7D9"/>
+
+                <TextView
+                    android:id="@+id/txtDistancia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.00 km"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="3dp"/>
+
+            </LinearLayout>
+
+
+            <!-- ESPAÇO -->
+            <Space
+                android:layout_width="7dp"
+                android:layout_height="1dp"/>
+
+
+            <!-- RITMO -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/card_info">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RITMO"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:textColor="#BDB7D9"/>
+
+                <TextView
+                    android:id="@+id/txtRitmo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- min/km"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="3dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- BOTÕES PRINCIPAIS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="▶  Iniciar"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_start"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:padding="0dp"/>
+
+            <Space
+                android:layout_width="7dp"
+                android:layout_height="1dp"/>
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="■  Parar"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_stop"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:padding="0dp"/>
+
+        </LinearLayout>
+
+
+        <!-- PERFIL -->
         <Button
             android:id="@+id/btnPerfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:layout_marginTop="8dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Meu perfil"
+            android:textSize="11sp"
+            android:textColor="#DCD7EF"
+            android:background="@drawable/button_profile"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="5dp"/>
 
     </LinearLayout>
 
